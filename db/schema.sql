@@ -37,3 +37,15 @@ CREATE TABLE inventory
 	PRIMARY KEY
         (id)
 );
+
+        CREATE TABLE Openitems
+        (
+            id int NOT NULL
+            AUTO_INCREMENT,
+	catagory varchar
+            (255) NOT NULL,
+	description varchar
+            (255) NOT NULL,
+	PRIMARY KEY
+            (id)
+);
