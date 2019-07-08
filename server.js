@@ -1,14 +1,25 @@
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-//
-// ******************************************************************************
-// *** Dependencies
-// =============================================================
-var express = require("express");
-
-// Sets up the Express App
-// =============================================================
+var express = require('express');
 var app = express();
+//  HEAD
+
+
+// app.get('/', function (req, res) {
+
+//     res.send('Welcome to Passport with Sequelize');
+
+// });
+
+
+// app.listen(`5001`, function (err) {
+
+//     if (!err)
+//         console.log("Site is live");
+//     else console.log(err)
+
+// });
+
+// app.get();
+
 var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
@@ -36,4 +47,5 @@ db.sequelize.sync({
     app.listen(PORT, function () {
         console.log("App listening on PORT " + PORT);
     });
-});
+}); >>>
+>>> > master
