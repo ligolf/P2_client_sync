@@ -24,7 +24,7 @@ module.exports = function (app) {
     app.get("/api/posts/category/:category", function (req, res) {
         db.Post.findAll({
                 where: {
-                    Clients: req.params.category
+                    category: req.params.category
                 }
             })
             .then(function (dbPost) {

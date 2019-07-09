@@ -4,26 +4,20 @@
     "password": "gginsberg",
     "database": "clientSync_db",
     "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "mysql"
   },
   "test": {
-    "username": "root",
+    "username": "",
     "password": "gginsberg",
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "database": "",
+    "host": "",
+    "dialect": "mysql"
   },
   "production": {
-    "username": "root",
+    "username": "",
     "password": "gginsberg",
-    "database": "database_production",
+    "database": "",
     "host": "127.0.0.1",
-    "port": 3306,
-    "dialect": "mysql",
-    "operatorsAliases": false
+    "dialect": "mysql"
   }
 }
