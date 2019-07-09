@@ -9,19 +9,27 @@ var exphbs = require('express-handlebars')
 
 
 //For BodyParser
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use(bodyParser.json());
 
 
 // For Passport
-app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })); // session secret
+app.use(session({
+    secret: 'keyboard cat',
+    resave: true,
+    saveUninitialized: true
+})); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 
 //For Handlebars
 app.set('views', './app/views')
-app.engine('hbs', exphbs({ extname: '.hbs' }));
+app.engine('hbs', exphbs({
+    extname: '.hbs'
+}));
 app.set('view engine', '.hbs');
 
 
@@ -37,6 +45,16 @@ var models = require("./app/models");
 //Routes
 var authRoute = require('./app/routes/auth.js')(app, passport);
 
+
+
+// // Syncing our sequelize models and then starting our Express app
+// // =============================================================
+// db.sequelize.sync({
+//     force: true
+// }).then(function () {
+//     app.listen(PORT, function () {
+//         console.log("App listening on PORT " + PORT);
+//     });
 
 //load passport strategies
 require('./app/config/passport/passport.js')(passport, models.user);
@@ -54,5 +72,7 @@ models.sequelize.sync().then(function () {
 
 app.listen(5020, function (err) {
     if (!err)
-        console.log("Site is live 5020"); else console.log(err)
+        console.log("Site is live 5020");
+    else console.log(err)
+
 });

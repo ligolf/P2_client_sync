@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "jusjokin2",
+    "password": "gginsberg",
     "database": "clientSync_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "",
-    "password": null,
+    "password": "gginsberg",
     "database": "",
     "host": "",
     "dialect": "mysql"
   },
   "production": {
     "username": "",
-    "password": null,
+    "password": "gginsberg",
     "database": "",
     "host": "127.0.0.1",
     "dialect": "mysql"
