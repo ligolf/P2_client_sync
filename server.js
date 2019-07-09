@@ -55,9 +55,4 @@ models.sequelize.sync().then(function () {
 app.listen(5020, function (err) {
     if (!err)
         console.log("Site is live 5020"); else console.log(err)
-
 });
-
-
-
-
