@@ -1,14 +1,31 @@
-<!DOCTYPE html>
-<html>
+<!-- CSS -->
 
 <head>
-	<title>WELCOME TO MY CLIENT SYNC</title>
+	<link href="css/dashboard.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
-	<h2>Dashboard</h2>
-	<h5>Hurray! you are logged in.</h5>
+<h5>You are logged in.</h5>
+<hr>
+<hr>
+<hr>
+{{!-- <div class="container"> --}}
+<div class="jumbotron">
+	<h1 class="text-center">MyClientSync</h1>
+	<h1 class="text-center">DASHBOARD</h1>
+</div>
 
-</body>
+<div>
 
-</html>
+
+</div>
+
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-2 text-center">
+		<button id="inventory-submit" class="btn btn-warning btn-lg pull-right">INVENTORY</button>
+		<button id="contacts-submit" class="btn btn-success btn-lg pull-right">CONTACTS</button>
+		<button id="toDoList-submit" class="btn btn-danger btn-lg pull-right">TO-DO-LIST</button>
+	</div>
+</div>
+
+{{!-- </div> --}}
+{{> footer }}
