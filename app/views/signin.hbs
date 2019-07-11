@@ -1,7 +1,21 @@
-<form id="signin" name="signin" method="post" action="signin">
-  <label for="email">Email Address</label>
-  <input class="text" name="email" type="text" />
-  <label for="password">Password</label>
-  <input name="password" type="password" />
-  <input class="btn" type="submit" value="Sign In" />
-</form>
+<head>
+  <link rel="stylesheet" href="css/signin.css">
+</head>
+
+<div class="container">
+  <div class="jumbotron text-center">
+    <h2>MyClientSync</h2>
+    <h6>Login</h6>
+    <div class="signInForm">
+      <form id="signin" name="signin" method="post" action="signin">
+        <label for="email">Email Address</label>
+        <input class="text" name="email" type="text" />
+        <br><br>
+        <label for="password">Password</label>
+        <input name="password" type="password" />
+        <br><br>
+        <input class="btn btn-success" type="submit" value="Sign In" />
+      </form>
+    </div>
+  </div>
+</div>
