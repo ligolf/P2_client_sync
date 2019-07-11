@@ -1,3 +1,95 @@
-{{!-- {{> nav }} --}}
+<h1>Contacts</h1>
 
-<h1>HELLO, YOU'VE MADE IT TO THE CONTACTS PAGE</h1>
+<ul>
+    {{#each profession}}
+    <li>
+        <p>
+            {{this.id}}. {{this.profession}}
+
+            <button data-planid="{{this.id}}" class="delplan">Delete a Contact</button>
+        </p>
+    </li>
+    {{/each}}
+</ul>
+
+<h2>Add a contact</h2>
+<form id="createContact" class="button-size">
+    <textarea type="text" name="plan"></textarea>
+    <button type="submit">Create Contact!</button>
+</form>
+
+<h2>Update a Contact</h2>
+<form id="updateContact" class="button-size">
+    <select name="id">
+        {{#each profession}}
+        <option value="{{this.id}}">{{this.profession}}</option>
+        {{/each}}
+    </select>
+    <textarea type="text" name="item" placeholder="item"></textarea>
+    <button type="submit">Update contact</button>
+</form>
+
+<script type="text/javascript">
+    $(".delcontact").on("click", function (event) {
+        // Get the ID from the button.
+        // This is shorthand for $(this).attr("data-planid")
+        var id = $(this).data("itemid");
+
+        // Send the DELETE request.
+        $.ajax("/contact/" + id, {
+            type: "DELETE"
+        }).then(
+            function () {
+                console.log("deleted id ", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
+    $("#createContact").on("submit", function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        // [name=plan] will find an element with a "name" attribute equal to the string "plan"
+        var newContact = {
+            plan: $("#createcontact [name=profession]").val().trim()
+        };
+
+        // Send the POST request.
+        $.ajax("/contact", {
+            type: "POST",
+            data: newContact
+        }).then(
+            function () {
+                console.log("added a new contact");
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+
+    $("#updateContact").on("submit", function (event) {
+        // Make sure to preventDefault on a submit event.
+        event.preventDefault();
+
+        // Get the ID by finding an element with a "name" attribute equal to the string "id"
+        var id = $("[name=id]").val().trim();
+
+        var updatedcontact = {
+            plan: $("#updatecontact [name=profession]").val().trim()
+        };
+
+        // Send the PUT request.
+        $.ajax("/contact/" + id, {
+            type: "PUT",
+            data: updatedcontact
+        }).then(
+            function () {
+                console.log("updated id ", id);
+                // Reload the page to get the updated list
+                location.reload();
+            }
+        );
+    });
+</script>

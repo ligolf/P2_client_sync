@@ -36,6 +36,11 @@ exports.contacts = function (req, res) {
   res.render('contacts');
 
 }
+exports.post = function (req, res) {
+
+  res.render('post');
+
+}
 
 exports.logout = function (req, res) {
 

@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-var application_controller = require('../controllers/application_controller');
+var authcontroller = require('../controllers/authcontroller');
 
-router.get('/', application_controller.index);
+router.get('/', authcontroller.index);
 
 module.exports = router;
