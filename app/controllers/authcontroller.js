@@ -19,6 +19,24 @@ exports.dashboard = function (req, res) {
 
 }
 
+exports.todo = function (req, res) {
+
+  res.render('todo');
+
+}
+
+exports.inventory = function (req, res) {
+
+  res.render('inventory');
+
+}
+
+exports.contacts = function (req, res) {
+
+  res.render('contacts');
+
+}
+
 exports.logout = function (req, res) {
 
   req.session.destroy(function (err) {

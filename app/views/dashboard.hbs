@@ -1,31 +1,39 @@
 <!-- CSS -->
 
 <head>
-	<link href="css/dashboard.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/dashboard.css">
 </head>
 
 <h5>You are logged in.</h5>
 <hr>
 <hr>
 <hr>
-{{!-- <div class="container"> --}}
-<div class="jumbotron">
-	<h1 class="text-center">MyClientSync</h1>
-	<h1 class="text-center">DASHBOARD</h1>
-</div>
+<div class="container">
+	<div class="jumbotron">
+		<h1 class="text-center">MyClientSync</h1>
+		<h1 class="text-center">DASHBOARD</h1>
+	</div>
 
-<div>
+	<div>
 
 
-</div>
-
-<div class="row">
-	<div class="col-sm-8 col-sm-offset-2 text-center">
-		<button id="inventory-submit" class="btn btn-warning btn-lg pull-right">INVENTORY</button>
-		<button id="contacts-submit" class="btn btn-success btn-lg pull-right">CONTACTS</button>
-		<button id="toDoList-submit" class="btn btn-danger btn-lg pull-right">TO-DO-LIST</button>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-3">
+				<a id="toDoList-submit" class="btn" href="/todo">New Post>TO-DO-LIST
+					<input type="image" class="dash-img" src="css/images/fists.jpeg" alt="TO-DO-LIST"></a>
+			</div>
+			<div class="col-3">
+				<a id=" toDoList-submit" class="btn" href="/inventory">INVENTORY
+					<input type="image" class="dash-img" src="css/images/fists.jpeg" alt="TO-DO-LIST"></a>
+			</div>
+			<div class="col-3">
+				<a id="toDoList-submit" class="btn" href="/contacts">CONTACTS
+					<input type="image" class="dash-img" src="css/images/fists.jpeg" alt="TO-DO-LIST"></a>
+			</div>
+		</div>
 	</div>
 </div>
 
-{{!-- </div> --}}
 {{> footer }}
