@@ -41,6 +41,11 @@ exports.post = function (req, res) {
   res.render('post');
 
 }
+exports.cms = function (req, res) {
+
+  res.render('cms');
+
+}
 
 exports.logout = function (req, res) {
 

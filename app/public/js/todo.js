@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // blogContainer holds all of our posts
-    var blogContainer = $(".blog-container");
+    var postContainer = $(".post-container");
     var postCategorySelect = $("#category");
     // Click events for the edit and delete buttons
     $(document).on("click", "button.delete", handlePostDelete);
@@ -41,12 +41,12 @@ $(document).ready(function () {
     // InitializeRows handles appending all of our constructed post HTML inside
     // blogContainer
     function initializeRows() {
-        blogContainer.empty();
+        postContainer.empty();
         var postsToAdd = [];
         for (var i = 0; i < posts.length; i++) {
             postsToAdd.push(createNewRow(posts[i]));
         }
-        blogContainer.append(postsToAdd);
+        postContainer.append(postsToAdd);
     }
 
     // This function constructs a post's HTML
@@ -119,7 +119,7 @@ $(document).ready(function () {
             "margin-top": "50px"
         });
         messageH2.html("No posts yet for this Client, navigate <a href='/cms'>here</a> in order to create a new post.");
-        blogContainer.append(messageH2);
+        postContainer.append(messageH2);
     }
 
     // This function handles reloading new posts when the category changes
