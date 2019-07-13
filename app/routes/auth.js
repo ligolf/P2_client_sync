@@ -11,8 +11,7 @@ module.exports = function (app, passport) {
     app.post('/signup', passport.authenticate('local-signup', {
         successRedirect: '/dashboard',
         failureRedirect: '/signup'
-    }
-    ));
+    }));
 
 
     app.get('/dashboard', isLoggedIn, authController.dashboard);
@@ -26,14 +25,16 @@ module.exports = function (app, passport) {
     // GOES TO CONTACTS HANDLEBAR
     app.get('/contacts', authController.contacts);
 
+    // GOES TO cms HANDLEBAR
+    app.get('/cms', authController.cms);
+
     app.get('/logout', authController.logout);
 
 
     app.post('/signin', passport.authenticate('local-signin', {
         successRedirect: '/dashboard',
         failureRedirect: '/signin'
-    }
-    ));
+    }));
 
 
     function isLoggedIn(req, res, next) {
@@ -45,9 +46,3 @@ module.exports = function (app, passport) {
 
 
 }
-
-
-
-
-
-
