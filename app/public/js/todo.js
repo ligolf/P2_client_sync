@@ -112,7 +112,7 @@ $(document).ready(function () {
 
     // This function displays a message when there are no posts
     function displayEmpty() {
-        blogContainer.empty();
+        postContainer.empty();
         var messageH2 = $("<h2>");
         messageH2.css({
             "text-align": "center",

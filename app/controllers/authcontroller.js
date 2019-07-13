@@ -47,6 +47,12 @@ exports.cms = function (req, res) {
 
 }
 
+exports.api = function (req, res) {
+
+  res.render('api');
+
+}
+
 exports.logout = function (req, res) {
 
   req.session.destroy(function (err) {
