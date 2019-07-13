@@ -1,33 +1,40 @@
-<h1>Contacts</h1>
+{{> navbar }}
 
-<ul>
-    {{#each profession}}
-    <li>
-        <p>
-            {{this.id}}. {{this.profession}}
+<div class="container text-center">
+    <h1>Contacts</h1>
 
-            <button data-planid="{{this.id}}" class="delplan">Delete a Contact</button>
-        </p>
-    </li>
-    {{/each}}
-</ul>
-
-<h2>Add a contact</h2>
-<form id="createContact" class="button-size">
-    <textarea type="text" name="plan"></textarea>
-    <button type="submit">Create Contact!</button>
-</form>
-
-<h2>Update a Contact</h2>
-<form id="updateContact" class="button-size">
-    <select name="id">
+    <ul>
         {{#each profession}}
-        <option value="{{this.id}}">{{this.profession}}</option>
+        <li>
+            <p>
+                {{this.id}}. {{this.profession}}
+
+                <button data-planid="{{this.id}}" class="delplan">Delete a Contact</button>
+            </p>
+        </li>
         {{/each}}
-    </select>
-    <textarea type="text" name="item" placeholder="item"></textarea>
-    <button type="submit">Update contact</button>
-</form>
+    </ul>
+
+    <h2>Add a contact</h2>
+    <form id="createContact" class="button-size">
+        <textarea type="text" name="plan"></textarea>
+        <button type="submit">Create Contact!</button>
+    </form>
+
+    <h2>Update a Contact</h2>
+    <form id="updateContact" class="button-size">
+        <select name="id">
+            {{#each profession}}
+            <option value="{{this.id}}">{{this.profession}}</option>
+            {{/each}}
+        </select>
+        <textarea type="text" name="item" placeholder="item"></textarea>
+        <button type="submit">Update contact</button>
+    </form>
+</div>
+
+{{> footer }}
+
 
 <script type="text/javascript">
     $(".delcontact").on("click", function (event) {

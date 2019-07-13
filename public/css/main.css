@@ -1,0 +1,34 @@
+.titleSpan {
+    font-size: 30px;
+    font-weight:bolder;
+    color: brown;
+}
+
+.jumbo-head {
+    height: 20px;
+    border-bottom: 2px solid brown
+}
+
+.logOut {
+    float: right;
+    
+}
+
+.dashReturn {
+    float: left;
+    color: brown
+}
+
+.dashReturn:hover {
+    color: blue;
+    font-weight:bold;}
+.logOut:hover {
+    color: blue;
+    font-weight:bold;
+}
+
+.footer {
+    color: brown;
+    padding:10px;
+}
+
