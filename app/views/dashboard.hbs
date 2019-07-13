@@ -3,10 +3,9 @@
 <head>
 	<link rel="stylesheet" href="css/dashboard.css">
 </head>
-
-<h5>You are logged in.</h5>
-<hr>
-<hr>
+<div class="container">
+	<h5 class="text-right">You are logged in.</h5>
+</div>
 <hr>
 <div class="container text-center">
 
@@ -15,18 +14,20 @@
 		<h1 class="text-center">DASHBOARD</h1>
 	</div>
 
-	<div class="row">
-		<div class="col-4">
-			<a id="toDoList-submit" class="btn" href="/todo">TO-DO-LIST<br>
-				<input type="image" class="dash-img" src="css/images/todo-app-pic.jpg" alt="TO-DO-LIST"></a>
-		</div>
-		<div class="col-4">
-			<a id=" toDoList-submit" class="btn" href="/inventory">INVENTORY<br>
-				<input type="image" class="dash-img" src="css/images/packing.jpg" alt="TO-DO-LIST"></a>
-		</div>
-		<div class="col-4">
-			<a id="toDoList-submit" class="btn" href="/contacts">CONTACTS<br>
-				<input type="image" class="dash-img" src="css/images/telephone_internet_1.jpg" alt="TO-DO-LIST"></a>
+	<div class="container dashButtons">
+		<div class="row">
+			<div class="col-4">
+				<a id="toDoList-submit" class="btn dash-btn" href="/todo">TO-DO-LIST<br>
+					<input type="image" class="dash-img" src="css/images/todo-app-pic.jpg" alt="TO-DO-LIST"></a>
+			</div>
+			<div class="col-4">
+				<a id=" toDoList-submit" class="btn dash-btn" href="/inventory">INVENTORY<br>
+					<input type="image" class="dash-img" src="css/images/packing.jpg" alt="TO-DO-LIST"></a>
+			</div>
+			<div class="col-4">
+				<a id="toDoList-submit" class="btn dash-btn" href="/contacts">CONTACTS<br>
+					<input type="image" class="dash-img" src="css/images/telephone_internet_1.jpg" alt="TO-DO-LIST"></a>
+			</div>
 		</div>
 	</div>
 </div>
