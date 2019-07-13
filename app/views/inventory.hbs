@@ -1,6 +1,6 @@
 {{> navbar }}
 <div class="container text-center">
-    <h1>Day Planner</h1>
+    <h1>Inventory</h1>
 
     <ul>
         {{#each plans}}
@@ -16,11 +16,16 @@
 
     <h2>Add an item</h2>
     <form id="createplan" class="button-size">
-        <textarea type="text" name="plan"></textarea>
+        <textarea type="text" name="catagory" placeholder="Category"></textarea>
+        <textarea type="text" name="description" placeholder="Description"></textarea>
+        <textarea type="text" name="make" placeholder="Make"></textarea>
+        <textarea type="text" name="type" placeholder="Type"></textarea>
+        <textarea type="text" name="year" placeholder="Year"></textarea>
+        <textarea type="text" name="invComm" placeholder="Inventory Comments"></textarea>
         <button type="submit">Add Item!</button>
     </form>
 
-    <h2>Update an item</h2>
+    {{!-- <h2>Update an item</h2>
     <form id="updateinventory" class="button-size">
         <select name="id">
             {{#each plans}}
@@ -28,8 +33,10 @@
             {{/each}}
         </select>
         <textarea type="text" name="item" placeholder="item"></textarea>
+        <textarea type="text" name="item" placeholder="item"></textarea>
+        <textarea type="text" name="item" placeholder="item"></textarea>
         <button type="submit">Update Item</button>
-    </form>
+    </form> --}}
 
 </div>
 

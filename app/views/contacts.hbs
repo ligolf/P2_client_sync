@@ -17,11 +17,16 @@
 
     <h2>Add a contact</h2>
     <form id="createContact" class="button-size">
-        <textarea type="text" name="plan"></textarea>
+        <textarea type="text" name="profession" placeholder="Profession"></textarea>
+        <textarea type="text" name="firstName" placeholder="First Name"></textarea>
+        <textarea type="text" name="lastName" placeholder="Last Name"></textarea>
+        <textarea type="text" name="phone" placeholder="Phone #"></textarea>
+        <textarea type="text" name="email" placeholder="Email"></textarea>
+        <textarea type="text" name="conComm" placeholder="Comments"></textarea>
         <button type="submit">Create Contact!</button>
     </form>
 
-    <h2>Update a Contact</h2>
+    {{!-- <h2>Update a Contact</h2>
     <form id="updateContact" class="button-size">
         <select name="id">
             {{#each profession}}
@@ -31,72 +36,72 @@
         <textarea type="text" name="item" placeholder="item"></textarea>
         <button type="submit">Update contact</button>
     </form>
-</div>
+</div> --}}
 
-{{> footer }}
+    {{> footer }}
 
 
-<script type="text/javascript">
-    $(".delcontact").on("click", function (event) {
-        // Get the ID from the button.
-        // This is shorthand for $(this).attr("data-planid")
-        var id = $(this).data("itemid");
+    <script type="text/javascript">
+        $(".delcontact").on("click", function (event) {
+            // Get the ID from the button.
+            // This is shorthand for $(this).attr("data-planid")
+            var id = $(this).data("itemid");
 
-        // Send the DELETE request.
-        $.ajax("/contact/" + id, {
-            type: "DELETE"
-        }).then(
-            function () {
-                console.log("deleted id ", id);
-                // Reload the page to get the updated list
-                location.reload();
-            }
-        );
-    });
+            // Send the DELETE request.
+            $.ajax("/contact/" + id, {
+                type: "DELETE"
+            }).then(
+                function () {
+                    console.log("deleted id ", id);
+                    // Reload the page to get the updated list
+                    location.reload();
+                }
+            );
+        });
 
-    $("#createContact").on("submit", function (event) {
-        // Make sure to preventDefault on a submit event.
-        event.preventDefault();
+        $("#createContact").on("submit", function (event) {
+            // Make sure to preventDefault on a submit event.
+            event.preventDefault();
 
-        // [name=plan] will find an element with a "name" attribute equal to the string "plan"
-        var newContact = {
-            plan: $("#createcontact [name=profession]").val().trim()
-        };
+            // [name=plan] will find an element with a "name" attribute equal to the string "plan"
+            var newContact = {
+                contact: $("#createcontact [name=profession]").val().trim()
+            };
 
-        // Send the POST request.
-        $.ajax("/contact", {
-            type: "POST",
-            data: newContact
-        }).then(
-            function () {
-                console.log("added a new contact");
-                // Reload the page to get the updated list
-                location.reload();
-            }
-        );
-    });
+            // Send the POST request.
+            $.ajax("/contact", {
+                type: "POST",
+                data: newContact
+            }).then(
+                function () {
+                    console.log("added a new contact");
+                    // Reload the page to get the updated list
+                    location.reload();
+                }
+            );
+        });
 
-    $("#updateContact").on("submit", function (event) {
-        // Make sure to preventDefault on a submit event.
-        event.preventDefault();
+        $("#updateContact").on("submit", function (event) {
+            // Make sure to preventDefault on a submit event.
+            event.preventDefault();
 
-        // Get the ID by finding an element with a "name" attribute equal to the string "id"
-        var id = $("[name=id]").val().trim();
+            // Get the ID by finding an element with a "name" attribute equal to the string "id"
+            var id = $("[name=id]").val().trim();
 
-        var updatedcontact = {
-            plan: $("#updatecontact [name=profession]").val().trim()
-        };
+            var updatedcontact = {
+                contact: $("#updatecontact [name=profession]").val().trim()
+            };
 
-        // Send the PUT request.
-        $.ajax("/contact/" + id, {
-            type: "PUT",
-            data: updatedcontact
-        }).then(
-            function () {
-                console.log("updated id ", id);
-                // Reload the page to get the updated list
-                location.reload();
-            }
-        );
-    });
-</script>
+            // Send the PUT request.
+            $.ajax("/contact/" + id, {
+                type: "PUT",
+                data: updatedcontact
+            }).then(
+                function () {
+                    console.log("updated id ", id);
+                    // Reload the page to get the updated list
+                    location.reload();
+                }
+            );
+        });
+    </script>
