@@ -20,5 +20,12 @@
 }
 
 body {
-    background-color: rgba(0, 100, 255, 0.719);
+    background-image: url("/css/images/asst-smile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.signUpNow {
+    margin-top:5px;
+    border-radius: 5px;
 }

@@ -1,33 +1,40 @@
-<h1>Day Planner</h1>
+{{> navbar }}
+<div class="container text-center">
+    <h1>Day Planner</h1>
 
-<ul>
-    {{#each plans}}
-    <li>
-        <p>
-            {{this.id}}. {{this.plan}}
-
-            <button data-planid="{{this.id}}" class="delplan">Delete an Item</button>
-        </p>
-    </li>
-    {{/each}}
-</ul>
-
-<h2>Add an item</h2>
-<form id="createplan" class="button-size">
-    <textarea type="text" name="plan"></textarea>
-    <button type="submit">Add Item!</button>
-</form>
-
-<h2>Update an item</h2>
-<form id="updateinventory" class="button-size">
-    <select name="id">
+    <ul>
         {{#each plans}}
-        <option value="{{this.id}}">{{this.plan}}</option>
+        <li>
+            <p>
+                {{this.id}}. {{this.plan}}
+
+                <button data-planid="{{this.id}}" class="delplan">Delete an Item</button>
+            </p>
+        </li>
         {{/each}}
-    </select>
-    <textarea type="text" name="item" placeholder="item"></textarea>
-    <button type="submit">Update Item</button>
-</form>
+    </ul>
+
+    <h2>Add an item</h2>
+    <form id="createplan" class="button-size">
+        <textarea type="text" name="plan"></textarea>
+        <button type="submit">Add Item!</button>
+    </form>
+
+    <h2>Update an item</h2>
+    <form id="updateinventory" class="button-size">
+        <select name="id">
+            {{#each plans}}
+            <option value="{{this.id}}">{{this.plan}}</option>
+            {{/each}}
+        </select>
+        <textarea type="text" name="item" placeholder="item"></textarea>
+        <button type="submit">Update Item</button>
+    </form>
+
+</div>
+
+{{> footer }}
+
 
 <script type="text/javascript">
     $(".delitem").on("click", function (event) {

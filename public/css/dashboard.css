@@ -1,25 +1,35 @@
 .jumbotron {
-    font-family: Shrikhand, cursive;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bolder;
     color: white;
     background-color: #1da1f2;
     background-image: url("https://images.pexels.com/photos/1645634/pexels-photo-1645634.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
-   
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
    }
    
    .btn {
     font-family: Shrikhand, cursive;
-    color: #1da1f2;
+    color: brown;
     background-color: white;
-    border-color: #1da1f2;
+    border-color: brown;
     border-style: solid;
     border-width: 2px;
    
    }
    
+.dashButtons {
+    padding: 50px;
+    border: 10px solid black;
+    margin-top: 100px;
+    margin-bottom:100px;
+}
+
    .leftButton {
     color: #1da1f2;
     background-color: white;
-    border-color: #1da1f2;
+    border-color: brown;
     position: relative;
    
    }
@@ -27,6 +37,12 @@
 .dash-img {
     width: 250px;
     height: 100px;
+}
+
+.dash-btn:hover {
+background-color:black;
+color: white;
+border: 5px solid brown;
 }
 
    /*
